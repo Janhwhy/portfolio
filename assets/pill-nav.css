@@ -1,0 +1,129 @@
+.pill-nav {
+  --nav-h: 40px;
+  --pill-pad-x: 16px;
+  --pill-gap: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.pill-nav-sm {
+  --nav-h: 32px;
+  --pill-pad-x: 14px;
+  --pill-gap: 2px;
+}
+
+.pill-nav-sm .pill {
+  font-size: 12px;
+}
+
+.pill-nav-items {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bar-bg, transparent);
+  border: 1.5px solid var(--bar-border, transparent);
+  border-radius: 9999px;
+}
+
+.pill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--pill-gap);
+  margin: 0;
+  padding: 6px 10px;
+}
+
+.pill-list > li {
+  display: flex;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--nav-h) - 8px);
+  padding: 0 var(--pill-pad-x);
+  background: transparent;
+  color: var(--pill-text, var(--base, #000));
+  text-decoration: none;
+  border-radius: 9999px;
+  font: 600 11px var(--font-heading, inherit);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.pill .hover-circle {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-radius: 50%;
+  background: var(--base, #000);
+  z-index: 1;
+  display: block;
+  pointer-events: none;
+  transform: translate(-50%, 0) scale(0);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pill:not(.pill-cta):hover .hover-circle,
+.pill:not(.pill-cta):focus-visible .hover-circle {
+  transform: translate(-50%, 0) scale(1);
+}
+
+.pill .label-stack {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  z-index: 2;
+}
+
+.pill .pill-label {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  line-height: 1;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pill:not(.pill-cta):hover .pill-label,
+.pill:not(.pill-cta):focus-visible .pill-label {
+  transform: translateY(-150%);
+}
+
+.pill .pill-label-hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--hover-text, #fff);
+  z-index: 3;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(150%);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+}
+
+.pill:hover .pill-label-hover,
+.pill:focus-visible .pill-label-hover {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.pill.is-active,
+.pill.pill-cta {
+  background: var(--base, #000);
+  color: var(--hover-text, #fff);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill .hover-circle,
+  .pill .pill-label,
+  .pill .pill-label-hover {
+    transition: none;
+  }
+}

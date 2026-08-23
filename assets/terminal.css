@@ -1,0 +1,103 @@
+.pf-terminal {
+  background: var(--color-text);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 24px 50px color-mix(in srgb, var(--color-text) 45%, transparent);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  max-width: 560px;
+}
+
+.pf-terminal-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: color-mix(in srgb, var(--color-text) 80%, black 20%);
+}
+
+.pf-terminal-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.pf-terminal-dot-red {
+  background: #ff5f57;
+}
+
+.pf-terminal-dot-yellow {
+  background: #febc2e;
+}
+
+.pf-terminal-dot-green {
+  background: #28c840;
+}
+
+.pf-terminal-title {
+  flex: 1;
+  text-align: center;
+  font: 600 11px var(--font-heading, inherit);
+  color: color-mix(in srgb, var(--color-bg) 55%, transparent);
+  margin-right: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pf-terminal-body {
+  padding: 20px 22px 26px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--color-bg);
+  min-height: 190px;
+}
+
+.pf-terminal-block {
+  margin-bottom: 12px;
+}
+
+.pf-terminal-line {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.pf-terminal-prompt {
+  color: var(--color-accent-300);
+  margin-right: 2px;
+}
+
+.pf-terminal-output {
+  display: block;
+  color: var(--color-bg);
+  opacity: 0.9;
+  margin: 3px 0 0 18px;
+}
+
+.pf-terminal-output--highlight {
+  color: var(--color-accent-300);
+  font-weight: 700;
+  opacity: 1;
+}
+
+.pf-terminal-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 1em;
+  background: var(--color-accent-300);
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: pf-term-blink 1s steps(1) infinite;
+}
+
+@keyframes pf-term-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-terminal-cursor {
+    animation: none;
+  }
+}

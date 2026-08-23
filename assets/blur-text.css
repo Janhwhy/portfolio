@@ -1,0 +1,48 @@
+.blur-text {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blur-text .bt-seg {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(var(--bt-y-from, -50px));
+  will-change: transform, filter, opacity;
+}
+
+.blur-text.in-view .bt-seg {
+  animation-name: bt-reveal;
+  animation-duration: var(--bt-duration, 0.7s);
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+@keyframes bt-reveal {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+    transform: translateY(var(--bt-y-from, -50px));
+  }
+  50% {
+    filter: blur(5px);
+    opacity: 0.5;
+    transform: translateY(var(--bt-y-mid, 5px));
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blur-text .bt-seg {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+  .blur-text.in-view .bt-seg {
+    animation: none;
+  }
+}

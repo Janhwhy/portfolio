@@ -1,0 +1,138 @@
+.mac-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 8, 13, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+}
+
+.mac-dialog-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease;
+}
+
+.mac-dialog {
+  width: min(560px, 100%);
+  max-height: 85vh;
+  overflow: auto;
+  background: var(--color-bg);
+  border-radius: 12px;
+  box-shadow: 0 30px 70px rgba(20, 8, 13, 0.4);
+  transform: scale(0.9) translateY(14px);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mac-dialog-overlay.open .mac-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.mac-dialog-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-divider);
+  border-radius: 12px 12px 0 0;
+  position: sticky;
+  top: 0;
+}
+
+.mac-dialog-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.mac-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mac-dot-red {
+  background: #ff5f57;
+}
+
+.mac-dot-yellow {
+  background: #febc2e;
+}
+
+.mac-dot-green {
+  background: #28c840;
+}
+
+.mac-dialog-title {
+  flex: 1;
+  text-align: center;
+  font: 600 12px var(--font-heading, inherit);
+  color: var(--color-text);
+  margin-right: 44px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mac-dialog-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font: 800 44px var(--font-heading, inherit);
+  letter-spacing: 0.02em;
+}
+
+.mac-dialog-body {
+  padding: 22px 24px 26px;
+}
+
+.mac-dialog-kicker {
+  font: 600 11px var(--font-heading, inherit);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent-700);
+  margin-bottom: 8px;
+}
+
+.mac-dialog-name {
+  font: 700 24px var(--font-heading, inherit);
+  color: var(--color-text);
+  margin: 0 0 12px;
+}
+
+.mac-dialog-summary {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--color-text);
+  margin-bottom: 18px;
+}
+
+.mac-dialog-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.mac-dialog-actions {
+  display: flex;
+  gap: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mac-dialog-overlay,
+  .mac-dialog {
+    transition: none;
+  }
+}

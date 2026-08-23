@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Janhavi Bhattad | AI/ML &amp; Data</title>
+<meta name="description" content="Janhavi Bhattad, B.Tech Computer Science (AI) student building drift-aware ML systems and RAG agents. Open to AI/ML and Data internships.">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="assets/blur-text.css">
+<link rel="stylesheet" href="assets/pill-nav.css">
+<link rel="stylesheet" href="assets/folder.css">
+<link rel="stylesheet" href="assets/mac-dialog.css">
+<link rel="stylesheet" href="assets/terminal.css">
+<link rel="stylesheet" href="assets/tilted-card.css">
+<style>
+:root{
+  --color-bg:#FFF8EE;
+  --color-surface:#FBE9E7;
+  --color-text:#2D1720;
+  --color-accent:#A62C4E;
+  --color-accent-2:#A62C4E;
+  --color-divider:color-mix(in srgb, #2D1720 35%, transparent);
+  --color-accent-100:#FBE9E7;
+  --color-accent-200:#F6D3D9;
+  --color-accent-300:#E9AAB8;
+  --color-accent-400:#C86A85;
+  --color-accent-500:#A62C4E;
+  --color-accent-600:#8B2340;
+  --color-accent-700:#6E1B33;
+  --color-accent-800:#521326;
+  --color-accent-900:#360C19;
+}
+a{color:var(--color-accent-700);text-decoration:none}
+a:hover{color:var(--color-accent)}
+::selection{background:color-mix(in srgb, var(--color-accent) 25%, transparent)}
+body{margin:0}
+.pf-section{max-width:1120px;margin:0 auto;padding:64px 32px}
+.pf-label{font:600 12px/1 var(--font-heading);letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:16px}
+.pf-label-lg{font-size:clamp(24px,3vw,32px);letter-spacing:0.03em;margin-bottom:20px}
+.pf-grid{display:grid;gap:24px}
+.pf-hero-title{font-size:64px;max-width:900px;margin-bottom:20px}
+.pf-hero-lead{font-size:18px;max-width:640px;color:color-mix(in srgb, var(--color-text) 70%, transparent);margin-bottom:32px}
+.pf-about-grid{grid-template-columns:1fr 1fr;align-items:start;gap:24px}
+.pf-hero-grid{grid-template-columns:1.1fr 1fr;align-items:center;gap:48px}
+.pf-hero-section{padding-top:96px;padding-bottom:80px}
+.pf-about-photo{width:78%;aspect-ratio:1/1;justify-self:end;margin-top:-24px}
+.pf-meta-label{font:600 11px var(--font-heading);text-transform:uppercase;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 55%, transparent)}
+.pf-skill-row{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--color-divider)}
+.pf-skill-row:last-child{border-bottom:none}
+.pf-folders-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:36px;justify-items:center;padding-top:16px}
+.pf-cert-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--color-divider)}
+.pf-cert-head{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;padding:16px 0;border-bottom:2px solid var(--color-divider);font:600 11px var(--font-heading);text-transform:uppercase;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 55%, transparent)}
+.pf-timeline-row{display:grid;grid-template-columns:180px 1fr;gap:24px}
+.pf-timeline-date{color:color-mix(in srgb, var(--color-text) 55%, transparent);font:600 13px var(--font-heading)}
+.pf-contact-links a{color:var(--color-bg);font:600 15px var(--font-heading)}
+.pf-social-btn{width:42px;height:42px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--color-divider);color:var(--color-text)}
+.pf-social-btn:hover{background:color-mix(in srgb, var(--color-text) 7%, transparent);border-color:var(--color-accent);color:var(--color-accent)}
+.pf-social-btn svg{width:18px;height:18px;display:block}
+.tag-icon{width:12px;height:12px;margin-right:5px;flex:none}
+
+.tl-ribbon{overflow:hidden;background:var(--color-accent);height:34px;display:flex;align-items:center}
+.tl-track{display:flex;align-items:center;flex-shrink:0;white-space:nowrap;animation:tl-scroll 64s linear infinite}
+.tl-ribbon:hover .tl-track{animation-play-state:paused}
+.tl-item{display:inline-block;font:600 18px/1 var(--font-heading);letter-spacing:2px;text-transform:uppercase;color:var(--color-bg)}
+.tl-sep{display:inline-block;font-size:13px;margin:0 16px;color:var(--color-bg);opacity:0.55}
+@keyframes tl-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){
+  .tl-track{animation:none}
+}
+
+@media (max-width: 860px){
+  .tl-ribbon{height:26px}
+  .tl-item{font-size:13px}
+  .tl-sep{font-size:10px;margin:0 10px}
+  .nav{padding:12px 14px}
+  .pill-nav{width:100%}
+  .pill-nav-items{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .pill-nav-items::-webkit-scrollbar{display:none}
+  .pill-list{flex-wrap:nowrap;padding:8px 16px}
+  .pill,.pill-nav-sm .pill{height:30px;padding:0 13px;font-size:11px;flex:none}
+  .pf-section{padding:48px 20px}
+  .pf-hero-section{padding-top:20px;padding-bottom:40px}
+  .pf-hero-title{font-size:38px}
+  .pf-about-grid,.pf-hero-grid,.pf-skill-row,.pf-timeline-row{grid-template-columns:1fr}
+  .pf-about-photo{justify-self:center;margin-top:0}
+  #hero-terminal{margin-top:24px !important}
+  .pf-cert-row,.pf-cert-head{grid-template-columns:1.5fr 1fr 1fr;font-size:13px}
+}
+</style>
+</head>
+<body>
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);min-height:100vh">
+
+  <div class="nav" style="position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:center;padding:16px 20px">
+    <nav class="pill-nav pill-nav-sm" aria-label="Primary" style="--base:var(--color-accent);--hover-text:var(--color-bg);--pill-text:var(--color-text);--bar-bg:var(--color-surface);--bar-border:var(--color-accent-200)">
+      <div class="pill-nav-items">
+        <ul class="pill-list" role="menubar">
+          <li role="none"><a role="menuitem" class="pill" data-section="about" href="#about"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">About</span><span class="pill-label-hover" aria-hidden="true">About</span></span></a></li>
+          <li role="none"><a role="menuitem" class="pill" data-section="skills" href="#skills"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Skills</span><span class="pill-label-hover" aria-hidden="true">Skills</span></span></a></li>
+          <li role="none"><a role="menuitem" class="pill" data-section="projects" href="#projects"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Projects</span><span class="pill-label-hover" aria-hidden="true">Projects</span></span></a></li>
+          <li role="none"><a role="menuitem" class="pill" data-section="certificates" href="#certificates"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Certificates</span><span class="pill-label-hover" aria-hidden="true">Certificates</span></span></a></li>
+          <li role="none"><a role="menuitem" class="pill" data-section="experience" href="#experience"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Experience</span><span class="pill-label-hover" aria-hidden="true">Experience</span></span></a></li>
+          <li role="none"><a role="menuitem" class="pill" data-section="education" href="#education"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Education</span><span class="pill-label-hover" aria-hidden="true">Education</span></span></a></li>
+          <li role="none"><a role="menuitem" class="pill" data-section="achievements" href="#achievements"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Achievements</span><span class="pill-label-hover" aria-hidden="true">Achievements</span></span></a></li>
+          <li role="none"><a role="menuitem" class="pill" data-section="contact" href="#contact"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Contact</span><span class="pill-label-hover" aria-hidden="true">Contact</span></span></a></li>
+          <li role="none"><a role="menuitem" class="pill pill-cta" href="assets/resume.pdf" download="Janhavi_Bhattad_Resume.pdf"><span class="label-stack"><span class="pill-label">Resume</span></span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <section class="pf-section pf-hero-section">
+    <div class="pf-grid pf-hero-grid">
+      <div>
+        <div class="pf-label">AI / ML / Data · Open to internships</div>
+        <h1 class="pf-hero-title">Janhavi Bhattad</h1>
+        <h3 style="margin:0 0 8px;font-weight:600;color:color-mix(in srgb, var(--color-text) 75%, transparent)">Building scalable artificial intelligence models.</h3>
+        <div class="pf-hero-lead">
+          <div style="font-weight:700;color:var(--color-text)">B.Tech CSE - Artificial Intelligence</div>
+          <div style="font-size:13px;font-weight:700;color:var(--color-text);margin-top:1px">Minor in Data Analytics</div>
+          <div style="font-style:italic;color:color-mix(in srgb, var(--color-text) 65%, transparent);margin-top:2px">Manipal Institute of Technology, Bengaluru</div>
+          <p style="margin:8px 0 0">Exploring <strong>AI, machine learning, and data analytics</strong> through projects that turn ideas and data into things worth building.</p>
+        </div>
+        <div style="display:flex;gap:16px">
+          <a class="btn btn-primary" href="#projects">View Projects →</a>
+          <a class="btn btn-secondary" href="#contact">Get in Touch</a>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:20px">
+          <a class="pf-social-btn" href="mailto:janhavi.bhattad@outlook.com" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a class="pf-social-btn" href="https://linkedin.com/in/JanhaviBhattad" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a class="pf-social-btn" href="https://github.com/Janhwhy" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div id="hero-terminal" style="margin-top:-40px"></div>
+    </div>
+  </section>
+
+  <div class="tl-ribbon" aria-hidden="true">
+    <div class="tl-track">
+      <span class="tl-item">Python</span><span class="tl-sep">✦</span><span class="tl-item">Java</span><span class="tl-sep">✦</span><span class="tl-item">SQL</span><span class="tl-sep">✦</span><span class="tl-item">C++</span><span class="tl-sep">✦</span><span class="tl-item">C</span><span class="tl-sep">✦</span><span class="tl-item">Machine Learning</span><span class="tl-sep">✦</span><span class="tl-item">Deep Learning</span><span class="tl-sep">✦</span><span class="tl-item">Computer Vision</span><span class="tl-sep">✦</span><span class="tl-item">NLP</span><span class="tl-sep">✦</span><span class="tl-item">PyTorch</span><span class="tl-sep">✦</span><span class="tl-item">XGBoost</span><span class="tl-sep">✦</span><span class="tl-item">RAG</span><span class="tl-sep">✦</span><span class="tl-item">LLM APIs</span><span class="tl-sep">✦</span><span class="tl-item">Vector DBs</span><span class="tl-sep">✦</span><span class="tl-item">Prompt Engineering</span><span class="tl-sep">✦</span><span class="tl-item">Data Analysis</span><span class="tl-sep">✦</span><span class="tl-item">EDA</span><span class="tl-sep">✦</span><span class="tl-item">Statistical Modeling</span><span class="tl-sep">✦</span><span class="tl-item">Feature Engineering</span><span class="tl-sep">✦</span><span class="tl-item">Pandas</span><span class="tl-sep">✦</span><span class="tl-item">NumPy</span><span class="tl-sep">✦</span><span class="tl-item">Power BI</span><span class="tl-sep">✦</span><span class="tl-item">Tableau</span><span class="tl-sep">✦</span><span class="tl-item">FastAPI</span><span class="tl-sep">✦</span><span class="tl-item">PostgreSQL</span><span class="tl-sep">✦</span><span class="tl-item">SQLite</span><span class="tl-sep">✦</span><span class="tl-item">DBMS</span><span class="tl-sep">✦</span><span class="tl-item">Docker</span><span class="tl-sep">✦</span><span class="tl-item">Kubernetes</span><span class="tl-sep">✦</span><span class="tl-item">CI/CD</span><span class="tl-sep">✦</span><span class="tl-item">Git</span><span class="tl-sep">✦</span><span class="tl-item">Python</span><span class="tl-sep">✦</span><span class="tl-item">Java</span><span class="tl-sep">✦</span><span class="tl-item">SQL</span><span class="tl-sep">✦</span><span class="tl-item">C++</span><span class="tl-sep">✦</span><span class="tl-item">C</span><span class="tl-sep">✦</span><span class="tl-item">Machine Learning</span><span class="tl-sep">✦</span><span class="tl-item">Deep Learning</span><span class="tl-sep">✦</span><span class="tl-item">Computer Vision</span><span class="tl-sep">✦</span><span class="tl-item">NLP</span><span class="tl-sep">✦</span><span class="tl-item">PyTorch</span><span class="tl-sep">✦</span><span class="tl-item">XGBoost</span><span class="tl-sep">✦</span><span class="tl-item">RAG</span><span class="tl-sep">✦</span><span class="tl-item">LLM APIs</span><span class="tl-sep">✦</span><span class="tl-item">Vector DBs</span><span class="tl-sep">✦</span><span class="tl-item">Prompt Engineering</span><span class="tl-sep">✦</span><span class="tl-item">Data Analysis</span><span class="tl-sep">✦</span><span class="tl-item">EDA</span><span class="tl-sep">✦</span><span class="tl-item">Statistical Modeling</span><span class="tl-sep">✦</span><span class="tl-item">Feature Engineering</span><span class="tl-sep">✦</span><span class="tl-item">Pandas</span><span class="tl-sep">✦</span><span class="tl-item">NumPy</span><span class="tl-sep">✦</span><span class="tl-item">Power BI</span><span class="tl-sep">✦</span><span class="tl-item">Tableau</span><span class="tl-sep">✦</span><span class="tl-item">FastAPI</span><span class="tl-sep">✦</span><span class="tl-item">PostgreSQL</span><span class="tl-sep">✦</span><span class="tl-item">SQLite</span><span class="tl-sep">✦</span><span class="tl-item">DBMS</span><span class="tl-sep">✦</span><span class="tl-item">Docker</span><span class="tl-sep">✦</span><span class="tl-item">Kubernetes</span><span class="tl-sep">✦</span><span class="tl-item">CI/CD</span><span class="tl-sep">✦</span><span class="tl-item">Git</span><span class="tl-sep">✦</span>
+    </div>
+  </div>
+
+  <section class="pf-section" id="about">
+    <div class="pf-label pf-label-lg">About</div>
+    <div class="pf-grid pf-about-grid">
+      <div>
+        <p style="font-size:19px;line-height:1.6">Computer Science student focused on <strong>AI, ML &amp; Data Analytics</strong>.</p>
+        <p style="font-size:16px;line-height:1.7;margin-top:16px;color:color-mix(in srgb, var(--color-text) 85%, transparent)">I really like numbers, patterns, and figuring out what they're trying to say. I enjoy working with data, building ML systems, experimenting with RAG, and creating analytics platforms that turn messy information into something useful.</p>
+        <p style="font-size:16px;line-height:1.7;margin-top:12px;color:color-mix(in srgb, var(--color-text) 85%, transparent)">I'm curious about how things work, love learning by building, and tend to get a little too invested in making things better than they need to be.</p>
+        <p style="font-size:16px;line-height:1.6;margin-top:16px;font-weight:700;color:var(--color-accent-700)">Always curious. Always building.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px">
+          <div><div class="pf-meta-label">Location</div><div>Bengaluru, Karnataka</div></div>
+          <div><div class="pf-meta-label">Availability</div><div>Open to internships</div></div>
+          <div><div class="pf-meta-label">Focus</div><div>ML, GenAI/RAG, Data Analytics</div></div>
+        </div>
+      </div>
+      <div id="about-photo" class="pf-about-photo"></div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="skills">
+    <div class="pf-label pf-label-lg">Skills</div>
+    <div class="pf-grid" style="gap:20px">
+      <div class="pf-skill-row">
+        <h4 style="margin:0">Languages</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/python.svg" alt="" aria-hidden="true">Python</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/java/java-original.svg" alt="" aria-hidden="true">Java</span><span class="tag tag-neutral">SQL</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/cplusplus.svg" alt="" aria-hidden="true">C++</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/c.svg" alt="" aria-hidden="true">C</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/javascript.svg" alt="" aria-hidden="true">JavaScript</span>
+        </div>
+      </div>
+      <div class="pf-skill-row">
+        <h4 style="margin:0">Frameworks</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/react.svg" alt="" aria-hidden="true">React</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/flask.svg" alt="" aria-hidden="true">Flask</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/mui.svg" alt="" aria-hidden="true">Material-UI</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/tensorflow.svg" alt="" aria-hidden="true">TensorFlow</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/scikitlearn.svg" alt="" aria-hidden="true">Scikit-Learn</span>
+        </div>
+      </div>
+      <div class="pf-skill-row">
+        <h4 style="margin:0">ML &amp; GenAI</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="tag tag-accent">Machine Learning</span><span class="tag tag-accent">Deep Learning</span><span class="tag tag-accent">Computer Vision</span><span class="tag tag-accent">NLP</span><span class="tag tag-accent">Pattern Recognition</span><span class="tag tag-accent"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/pytorch.svg" alt="" aria-hidden="true">PyTorch</span><span class="tag tag-accent">XGBoost</span><span class="tag tag-accent">RAG</span><span class="tag tag-accent">LLM APIs</span><span class="tag tag-accent">Vector DBs</span><span class="tag tag-accent">Prompt Engineering</span><span class="tag tag-accent">LangGraph</span><span class="tag tag-accent">ChromaDB</span><span class="tag tag-accent"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/ollama.svg" alt="" aria-hidden="true">Ollama</span><span class="tag tag-accent"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/googlegemini.svg" alt="" aria-hidden="true">Gemini</span>
+        </div>
+      </div>
+      <div class="pf-skill-row">
+        <h4 style="margin:0">Data Analytics</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="tag tag-neutral">Data Analysis</span><span class="tag tag-neutral">EDA</span><span class="tag tag-neutral">Statistical Modeling</span><span class="tag tag-neutral">Feature Engineering</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/pandas.svg" alt="" aria-hidden="true">Pandas</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/numpy.svg" alt="" aria-hidden="true">NumPy</span><span class="tag tag-neutral">Power BI</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/tableau.svg" alt="" aria-hidden="true">Tableau</span>
+        </div>
+      </div>
+      <div class="pf-skill-row">
+        <h4 style="margin:0">Backend &amp; Databases</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/fastapi.svg" alt="" aria-hidden="true">FastAPI</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/postgresql.svg" alt="" aria-hidden="true">PostgreSQL</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/sqlite.svg" alt="" aria-hidden="true">SQLite</span><span class="tag tag-neutral">DBMS</span>
+        </div>
+      </div>
+      <div class="pf-skill-row">
+        <h4 style="margin:0">MLOps &amp; DevOps</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/docker.svg" alt="" aria-hidden="true">Docker</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/kubernetes.svg" alt="" aria-hidden="true">Kubernetes</span><span class="tag tag-neutral">CI/CD</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/git.svg" alt="" aria-hidden="true">Git</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/databricks.svg" alt="" aria-hidden="true">Databricks</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/prefect.svg" alt="" aria-hidden="true">Prefect</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/githubactions.svg" alt="" aria-hidden="true">GitHub Actions</span>
+        </div>
+      </div>
+      <div class="pf-skill-row">
+        <h4 style="margin:0">Tools</h4>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/jupyter.svg" alt="" aria-hidden="true">Jupyter</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/supabase.svg" alt="" aria-hidden="true">Supabase</span><span class="tag tag-neutral"><img class="tag-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/postman.svg" alt="" aria-hidden="true">Postman</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="projects">
+    <div class="pf-label pf-label-lg">Projects</div>
+    <div class="pf-grid pf-folders-grid">
+      <div class="folder-item"><div id="folder-slot-1"></div><div class="folder-label">The Drifting Oracle</div></div>
+      <div class="folder-item"><div id="folder-slot-2"></div><div class="folder-label">Pitwall</div></div>
+      <div class="folder-item"><div id="folder-slot-3"></div><div class="folder-label">ShockProof</div></div>
+      <div class="folder-item"><div id="folder-slot-4"></div><div class="folder-label">Coming Soon</div></div>
+      <div class="folder-item"><div id="folder-slot-5"></div><div class="folder-label">Coming Soon</div></div>
+      <div class="folder-item"><div id="folder-slot-6"></div><div class="folder-label">Coming Soon</div></div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="certificates">
+    <div class="pf-label pf-label-lg">Certificates</div>
+    <div class="pf-grid" style="gap:0">
+      <div class="pf-cert-head">
+        <div>Certificate</div><div>Issuer</div><div>View</div>
+      </div>
+      <div class="pf-cert-row">
+        <div>Hadoop Foundations – Level 1</div><div>IBM</div><div><a class="btn btn-ghost" href="certificates/hadoop.pdf" target="_blank" rel="noopener">View →</a></div>
+      </div>
+      <div class="pf-cert-row">
+        <div>Machine Learning for Data Science Projects</div><div>IBM</div><div><a class="btn btn-ghost" href="certificates/ML%20for%20DS.pdf" target="_blank" rel="noopener">View →</a></div>
+      </div>
+      <div class="pf-cert-row">
+        <div>Spark – Level 1</div><div>IBM</div><div><a class="btn btn-ghost" href="certificates/Spark.pdf" target="_blank" rel="noopener">View →</a></div>
+      </div>
+      <div class="pf-cert-row">
+        <div>Big Data Foundations – Level 1</div><div>IBM</div><div><a class="btn btn-ghost" href="certificates/big%20data.pdf" target="_blank" rel="noopener">View →</a></div>
+      </div>
+      <div class="pf-cert-row" style="border-bottom:none">
+        <div>Explore Machine Learning using R</div><div>Infosys Springboard</div><div><a class="btn btn-ghost" href="certificates/cert-ml%20using%20r.pdf" target="_blank" rel="noopener">View →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="experience">
+    <div class="pf-label pf-label-lg">Experience</div>
+    <div class="pf-grid" style="gap:32px">
+      <div class="pf-timeline-row">
+        <div class="pf-timeline-date">May 2026 – Jul 2026<div style="margin-top:4px;font-weight:400">Ahmedabad, Gujarat</div></div>
+        <div>
+          <h4>Data Analytics Intern, CandidRoot Solutions Pvt. Ltd. (Odoo Silver Partner)</h4>
+          <p style="margin-top:8px">Built SQL pipelines to extract, clean, and standardize sales, inventory, and customer data, cutting manual reporting time ~60%. Developed Power BI dashboards with SQL-driven data models and KPI visualizations to monitor sales performance, revenue trends, customer behavior, and inventory metrics.</p>
+        </div>
+      </div>
+      <div class="pf-timeline-row">
+        <div class="pf-timeline-date">May 2025 – Jul 2025<div style="margin-top:4px;font-weight:400">Pune, Maharashtra</div></div>
+        <div>
+          <h4>Software Development Intern, Nanostuffs Technologies</h4>
+          <p style="margin-top:8px">Built responsive React components for Career Mantrana, an ed-tech college-predictor tool used for student admissions guidance. Implemented UI features and optimized rendering performance in an agile team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="education">
+    <div class="pf-label pf-label-lg">Education</div>
+    <div class="pf-grid" style="gap:24px">
+      <div class="pf-timeline-row">
+        <div class="pf-timeline-date">2023 – May 2027</div>
+        <div>
+          <h4>B.Tech in Computer Science (Artificial Intelligence), Minor in Data Analytics</h4>
+          <p style="margin-top:8px">Manipal Institute of Technology, Bengaluru - CGPA 8.02</p>
+        </div>
+      </div>
+      <div class="pf-timeline-row">
+        <div class="pf-timeline-date">May 2021</div>
+        <div>
+          <h4>Higher Secondary Education</h4>
+          <p style="margin-top:8px">St. Mary's School, Pune, Maharashtra</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="achievements">
+    <div class="pf-label pf-label-lg">Achievements</div>
+    <div class="pf-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px">
+      <div>
+        <div style="font:800 48px var(--font-heading);color:var(--color-accent)">6th</div>
+        <div style="font:700 15px var(--font-heading);margin-top:2px">of 869 teams</div>
+        <div class="pf-meta-label" style="color:var(--color-accent-700);margin-top:10px">Manipal Hackathon 2025</div>
+        <p style="margin-top:6px;font-size:14px;line-height:1.6;color:color-mix(in srgb, var(--color-text) 70%, transparent)">ResourceX, a sustainable supply chain digital twin</p>
+      </div>
+      <div>
+        <div style="font:800 48px var(--font-heading);color:var(--color-accent)">6th</div>
+        <div style="font:700 15px var(--font-heading);margin-top:2px">of 64 teams</div>
+        <div class="pf-meta-label" style="color:var(--color-accent-700);margin-top:10px">Manipal Techfest 2025</div>
+        <p style="margin-top:6px;font-size:14px;line-height:1.6;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Spendwise, a budget tracker with impulsive-purchase detection and a budgeting chatbot</p>
+      </div>
+      <div>
+        <div style="font:800 48px var(--font-heading);color:var(--color-accent)">25</div>
+        <div style="font:700 15px var(--font-heading);margin-top:2px">semi-finalist</div>
+        <div class="pf-meta-label" style="color:var(--color-accent-700);margin-top:10px">Honeywell Hackspace 2025</div>
+        <p style="margin-top:6px;font-size:14px;line-height:1.6;color:color-mix(in srgb, var(--color-text) 70%, transparent)">WeathAware, a report summariser for pilots and ATC</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="github">
+    <div class="pf-label pf-label-lg">GitHub Activity</div>
+    <div>
+      <img src="https://ghchart.rshah.org/A62C4E/Janhwhy" alt="Janhavi Bhattad's GitHub contribution graph" style="width:100%;max-width:1020px;height:auto;display:block">
+    </div>
+    <a class="btn btn-ghost" href="https://github.com/Janhwhy" target="_blank" rel="noopener" style="margin-top:16px">View GitHub →</a>
+  </section>
+
+  <section id="contact" style="background:var(--color-text);color:var(--color-bg);padding:80px 32px">
+    <div style="max-width:1120px;margin:0 auto">
+      <div class="pf-label pf-label-lg" style="color:var(--color-accent-300)">Contact</div>
+      <h2 style="font-size:44px;max-width:900px;color:var(--color-bg)">Open to AI/ML and Data internships.<br>Let's talk.</h2>
+      <div class="pf-contact-links" style="display:flex;gap:32px;margin-top:32px;flex-wrap:wrap">
+        <a href="mailto:janhavi.bhattad@outlook.com">janhavi.bhattad@outlook.com</a>
+        <a href="tel:+917841023179">+91 78410 23179</a>
+        <a href="https://linkedin.com/in/JanhaviBhattad" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/Janhwhy" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+      <hr class="hr" style="background:color-mix(in srgb, var(--color-bg) 25%, transparent);margin:40px 0 24px">
+      <div style="font-size:12px;color:color-mix(in srgb, var(--color-bg) 60%, transparent)">© 2026 Janhavi Bhattad</div>
+    </div>
+  </section>
+
+</div>
+<script src="assets/blur-text.js"></script>
+<script src="assets/pill-nav.js"></script>
+<script src="assets/folder.js"></script>
+<script src="assets/mac-dialog.js"></script>
+<script src="assets/terminal.js"></script>
+<script src="assets/tilted-card.js"></script>
+<script>
+TiltedCard.mount(document.getElementById('about-photo'), {
+  imageSrc: 'image.png',
+  altText: 'Janhavi Bhattad',
+  captionText: 'Janhavi Bhattad',
+  scaleOnHover: 1.08,
+  rotateAmplitude: 12
+});
+</script>
+<script>
+PortfolioTerminal.mount(document.getElementById('hero-terminal'), {
+  title: 'janhavi@portfolio — zsh',
+  promptText: '$ ',
+  typingSpeed: 16,
+  pauseAfterCommand: 100,
+  pauseAfterOutput: 250,
+  commands: [
+    { command: 'whoami', output: 'janhavi_bhattad' },
+    { command: 'cat role.txt', output: 'Data Analyst · ML Engineer', highlight: true },
+    { command: 'cat location.txt', output: 'Bengaluru, India' },
+    { command: 'cat education.txt', output: 'B.Tech CS (AI), Manipal Institute of Technology · 2027' },
+    { command: 'cat status.txt', output: 'Open to AI/ML and Data internships' },
+    { command: 'ls skills/', output: 'python pytorch fastapi docker langgraph databricks' },
+    { command: 'cat contact.txt', output: 'janhavi.bhattad@outlook.com' }
+  ]
+});
+</script>
+<script>
+(function () {
+  var berry = '#A62C4E';
+  var berryDark = '#6E1B33';
+  var muted = '#E9AAB8';
+  var mutedDark = '#C86A85';
+
+  var PROJECTS = [
+    {
+      slot: 'folder-slot-1',
+      name: 'The Drifting Oracle',
+      initial: 'D',
+      kicker: 'Credit Risk / MLOps',
+      summary: 'Drift-aware credit-risk system monitoring 7 features via Population Stability Index, triggering Champion/Challenger XGBoost retraining and improving AUC from 0.73 to 0.76. Deployed with Docker, Kubernetes, and Prefect, with Databricks Unity Catalog, MLflow, and a 47-test CI/CD pytest suite. Includes a LangGraph RAG agent using ChromaDB and Llama/Gemini to generate regulatory-grounded loan-rejection explanations with automated hallucination detection.',
+      tools: ['Python', 'FastAPI', 'Databricks', 'XGBoost', 'Docker', 'Kubernetes', 'Prefect', 'LangGraph', 'ChromaDB'],
+      code: 'https://github.com/Janhwhy/The-Drifting-Oracle',
+      color: berry,
+      colorDark: berryDark
+    },
+    {
+      slot: 'folder-slot-2',
+      name: 'Pitwall',
+      initial: 'P',
+      kicker: 'Multi-Agent RAG',
+      summary: 'Multi-agent RAG system with 6 specialized agents and an orchestrator using ChromaDB and Groq LLM APIs to answer race-analytics queries over 30K+ records. Backed by a 15-endpoint FastAPI service with SQLite and Python ETL pipelines to ingest, process, and serve structured race data.',
+      tools: ['Python', 'FastAPI', 'SQLite', 'ChromaDB', 'Groq'],
+      code: 'https://github.com/Janhwhy/PitWall-RAG',
+      color: berry,
+      colorDark: berryDark
+    },
+    {
+      slot: 'folder-slot-3',
+      name: 'ShockProof',
+      initial: 'S',
+      kicker: 'Risk Analytics',
+      summary: 'Supply chain risk platform using NetworkX and Monte Carlo simulations across 101 suppliers, 501 products, and 1.5K+ relationships to compute P95 revenue-at-risk. Risk scoring validated with bootstrap resampling and Wilcoxon testing, achieving 95.6% precision@10; deployed via PostgreSQL, FastAPI, React, and Docker.',
+      tools: ['Python', 'PostgreSQL', 'NetworkX', 'FastAPI', 'React', 'Docker'],
+      code: 'https://github.com/Janhwhy/supply-chain-shock-simulator',
+      color: berry,
+      colorDark: berryDark
+    },
+    {
+      slot: 'folder-slot-4',
+      name: 'Coming Soon',
+      initial: '?',
+      kicker: 'In Progress',
+      summary: 'A new project is currently in the works. Check back soon for details.',
+      tools: [],
+      code: null,
+      color: muted,
+      colorDark: mutedDark
+    },
+    {
+      slot: 'folder-slot-5',
+      name: 'Coming Soon',
+      initial: '?',
+      kicker: 'In Progress',
+      summary: 'A new project is currently in the works. Check back soon for details.',
+      tools: [],
+      code: null,
+      color: muted,
+      colorDark: mutedDark
+    },
+    {
+      slot: 'folder-slot-6',
+      name: 'Coming Soon',
+      initial: '?',
+      kicker: 'In Progress',
+      summary: 'A new project is currently in the works. Check back soon for details.',
+      tools: [],
+      code: null,
+      color: muted,
+      colorDark: mutedDark
+    }
+  ];
+
+  var activeInstance = null;
+
+  PROJECTS.forEach(function (project) {
+    var slot = document.getElementById(project.slot);
+    if (!slot) return;
+    var instance = FolderComponent.mount(slot, {
+      color: project.color,
+      onToggle: function (isOpen) {
+        if (isOpen) {
+          if (activeInstance && activeInstance !== instance) activeInstance.close();
+          activeInstance = instance;
+          MacDialog.open(project, function () {
+            if (activeInstance === instance) activeInstance = null;
+            instance.close();
+          });
+        } else if (activeInstance === instance) {
+          activeInstance = null;
+          MacDialog.close();
+        }
+      }
+    });
+  });
+})();
+</script>
+<script>
+document.querySelectorAll('.pf-label-lg').forEach(function(el){
+  BlurText.mount(el, { animateBy: 'letters', direction: 'top', delay: 25, stepDuration: 0.3 });
+});
+</script>
+<script>
+(function(){
+  if (location.protocol === 'file:') return;
+  var last = null;
+  function check(){
+    Promise.all([
+      fetch(location.pathname + '?_=' + Date.now(), {cache:'no-store'}).then(function(r){return r.text()}),
+      fetch('styles.css?_=' + Date.now(), {cache:'no-store'}).then(function(r){return r.text()})
+    ]).then(function(parts){
+      var snapshot = parts.join('\n');
+      if (last !== null && snapshot !== last) { location.reload(); return; }
+      last = snapshot;
+      setTimeout(check, 1000);
+    }).catch(function(){ setTimeout(check, 1000); });
+  }
+  check();
+})();
+</script>
+</body>
+</html>
