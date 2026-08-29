@@ -63,7 +63,16 @@
 
     const thumb = dialog.querySelector('.mac-dialog-thumb');
     thumb.style.background = `linear-gradient(135deg, ${project.color || 'var(--color-accent)'}, ${project.colorDark || 'var(--color-accent-700)'})`;
-    thumb.textContent = project.initial || project.name.charAt(0);
+    thumb.innerHTML = '';
+    if (project.image) {
+      const img = document.createElement('img');
+      img.className = 'mac-dialog-thumb-img';
+      img.src = project.image;
+      img.alt = project.name;
+      thumb.appendChild(img);
+    } else {
+      thumb.textContent = project.initial || project.name.charAt(0);
+    }
 
     dialog.querySelector('.mac-dialog-kicker').textContent = project.kicker || '';
     dialog.querySelector('.mac-dialog-name').textContent = project.name;
