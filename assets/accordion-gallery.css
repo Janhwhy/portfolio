@@ -98,14 +98,14 @@
 @media (max-width: 720px) {
   .acc-gallery {
     flex-direction: column;
-    height: 560px;
+    height: auto;
   }
   .acc-panel {
     flex: 0 0 52px;
     width: 100%;
   }
   .acc-panel.is-expanded {
-    flex: 1 1 auto;
+    flex: 0 0 380px;
   }
   .acc-panel:not(.is-expanded) .acc-panel-label {
     writing-mode: initial;

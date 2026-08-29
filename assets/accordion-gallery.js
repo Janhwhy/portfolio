@@ -1,6 +1,7 @@
-// Horizontal accordion gallery: click a panel to expand it, others collapse
-// to a thin labeled strip. Pure CSS transition (flex-basis/flex-grow) —
-// no scroll coupling, so there's nothing to desync while scrolling.
+// Horizontal accordion gallery: hover/click a panel to expand it, others
+// collapse to a thin labeled strip. Pure CSS transition (flex-basis/
+// flex-grow). Below the mobile breakpoint it becomes a tall vertical stack
+// and an IntersectionObserver expands whichever panel scrolls to center.
 (function () {
   function mount(container, options) {
     var opts = Object.assign({ items: [], startIndex: 0 }, options || {});
@@ -86,7 +87,39 @@
       setExpanded(Math.min(opts.startIndex, panels.length - 1));
     }
 
-    return { setExpanded: setExpanded };
+    // Below the mobile breakpoint the gallery stacks into a tall vertical
+    // list (see accordion-gallery.css), and there's no hover to drive
+    // expansion — so instead expand whichever panel is nearest the center
+    // of the viewport as the page scrolls.
+    var mobileQuery = window.matchMedia('(max-width: 720px)');
+    var scrollObserver = null;
+
+    function syncScrollExpand() {
+      if (scrollObserver) {
+        scrollObserver.disconnect();
+        scrollObserver = null;
+      }
+      if (!mobileQuery.matches) return;
+      scrollObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var index = panels.indexOf(entry.target);
+          if (index !== -1) setExpanded(index);
+        });
+      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+      panels.forEach(function (panel) { scrollObserver.observe(panel); });
+    }
+
+    mobileQuery.addEventListener('change', syncScrollExpand);
+    syncScrollExpand();
+
+    return {
+      setExpanded: setExpanded,
+      destroy: function () {
+        mobileQuery.removeEventListener('change', syncScrollExpand);
+        if (scrollObserver) scrollObserver.disconnect();
+      }
+    };
   }
 
   window.AccordionGallery = { mount: mount };
