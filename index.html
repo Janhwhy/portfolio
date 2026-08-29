@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="assets/mac-dialog.css">
 <link rel="stylesheet" href="assets/terminal.css">
 <link rel="stylesheet" href="assets/tilted-card.css">
+<link rel="stylesheet" href="assets/accordion-gallery.css">
 <style>
 :root{
   --color-bg:#FFF8EE;
@@ -100,6 +101,8 @@ body{margin:0}
           <li role="none"><a role="menuitem" class="pill" data-section="about" href="#about"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">About</span><span class="pill-label-hover" aria-hidden="true">About</span></span></a></li>
           <li role="none"><a role="menuitem" class="pill" data-section="skills" href="#skills"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Skills</span><span class="pill-label-hover" aria-hidden="true">Skills</span></span></a></li>
           <li role="none"><a role="menuitem" class="pill" data-section="projects" href="#projects"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Projects</span><span class="pill-label-hover" aria-hidden="true">Projects</span></span></a></li>
+          <li role="none"><a role="menuitem" class="pill" data-section="dashboard" href="#dashboard"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Dashboards</span><span class="pill-label-hover" aria-hidden="true">Dashboards</span></span></a></li>
+          <li role="none"><a role="menuitem" class="pill" data-section="research" href="#research"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Research</span><span class="pill-label-hover" aria-hidden="true">Research</span></span></a></li>
           <li role="none"><a role="menuitem" class="pill" data-section="certificates" href="#certificates"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Certificates</span><span class="pill-label-hover" aria-hidden="true">Certificates</span></span></a></li>
           <li role="none"><a role="menuitem" class="pill" data-section="experience" href="#experience"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Experience</span><span class="pill-label-hover" aria-hidden="true">Experience</span></span></a></li>
           <li role="none"><a role="menuitem" class="pill" data-section="education" href="#education"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Education</span><span class="pill-label-hover" aria-hidden="true">Education</span></span></a></li>
@@ -221,9 +224,34 @@ body{margin:0}
       <div class="folder-item"><div id="folder-slot-1"></div><div class="folder-label">The Drifting Oracle</div></div>
       <div class="folder-item"><div id="folder-slot-2"></div><div class="folder-label">Pitwall</div></div>
       <div class="folder-item"><div id="folder-slot-3"></div><div class="folder-label">ShockProof</div></div>
-      <div class="folder-item"><div id="folder-slot-4"></div><div class="folder-label">Coming Soon</div></div>
-      <div class="folder-item"><div id="folder-slot-5"></div><div class="folder-label">Coming Soon</div></div>
-      <div class="folder-item"><div id="folder-slot-6"></div><div class="folder-label">Coming Soon</div></div>
+      <div class="folder-item"><div id="folder-slot-4"></div><div class="folder-label">Sentri</div></div>
+      <div class="folder-item"><div id="folder-slot-5"></div><div class="folder-label">MoneyPal</div></div>
+      <div class="folder-item"><div id="folder-slot-6"></div><div class="folder-label">QuantForge</div></div>
+    </div>
+  </section>
+
+  <section class="pf-section" id="dashboard">
+    <div class="pf-label pf-label-lg">Dashboards</div>
+    <div id="dashboard-gallery"></div>
+  </section>
+
+  <section class="pf-section" id="research">
+    <div class="pf-label pf-label-lg">Research</div>
+    <div class="pf-grid" style="gap:24px">
+      <div>
+          <h4>The Influence of AI on Algorithmic Trading and Its Impact on Predicting Financial Market Trends</h4>
+          <div class="pf-meta-label" style="margin-top:6px">IJSET, Vol. 13, Issue 2 · 2025</div>
+          <p style="margin-top:8px"><strong>Topic:</strong> Examines how AI, especially deep learning and reinforcement learning, is transforming algorithmic trading and financial market prediction, covering trade execution speed, fraud detection, and risk management.</p>
+          <p style="margin-top:8px"><strong>Methodology:</strong> Mixed-methods study using time series analysis, regression models, and three predictive ML algorithms (neural networks, support vector machines, and decision trees) applied to historical stock prices, trading volumes, and macroeconomic data (interest rates, inflation, GDP growth).</p>
+          <p style="margin-top:8px"><strong>Predictive accuracy:</strong> Neural network models performed best, reaching an average R-squared of 0.85, outperforming traditional statistical models.</p>
+          <p style="margin-top:8px"><strong>Trading performance:</strong> AI-based strategies beat traditional benchmarks (buy-and-hold, moving average), delivering higher Sharpe ratios and better risk-adjusted returns.</p>
+          <p style="margin-top:8px"><strong>Findings &amp; limitations:</strong> AI improves fraud detection, credit risk assessment, and regulatory compliance, but is limited by reliance on historical data and training-data quality and bias. The paper calls for stronger regulatory frameworks around AI autonomy in trading.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
+            <a class="btn btn-primary" href="certificates/Janhavi%20Bhattad%20certificate.png" target="_blank" rel="noopener">Certificate →</a>
+            <a class="btn btn-primary" href="https://www.researchgate.net/publication/391209008_The_Influence_of_Artificial_Intelligence_on_Algorithmic_Trading_and_Its_Impact_on_Predicting_Financial_Market_Trends" target="_blank" rel="noopener">Read Here →</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -245,8 +273,11 @@ body{margin:0}
       <div class="pf-cert-row">
         <div>Big Data Foundations – Level 1</div><div>IBM</div><div><a class="btn btn-ghost" href="certificates/big%20data.pdf" target="_blank" rel="noopener">View →</a></div>
       </div>
-      <div class="pf-cert-row" style="border-bottom:none">
+      <div class="pf-cert-row">
         <div>Explore Machine Learning using R</div><div>Infosys Springboard</div><div><a class="btn btn-ghost" href="certificates/cert-ml%20using%20r.pdf" target="_blank" rel="noopener">View →</a></div>
+      </div>
+      <div class="pf-cert-row" style="border-bottom:none">
+        <div>Introduction to Computer Vision and Image Processing</div><div>IBM</div><div><a class="btn btn-ghost" href="certificates/CV%20cert.pdf" target="_blank" rel="noopener">View →</a></div>
       </div>
     </div>
   </section>
@@ -345,6 +376,7 @@ body{margin:0}
 <script src="assets/mac-dialog.js"></script>
 <script src="assets/terminal.js"></script>
 <script src="assets/tilted-card.js"></script>
+<script src="assets/accordion-gallery.js"></script>
 <script>
 TiltedCard.mount(document.getElementById('about-photo'), {
   imageSrc: 'image.png',
@@ -369,6 +401,52 @@ PortfolioTerminal.mount(document.getElementById('hero-terminal'), {
     { command: 'cat status.txt', output: 'Open to AI/ML and Data internships' },
     { command: 'ls skills/', output: 'python pytorch fastapi docker langgraph databricks' },
     { command: 'cat contact.txt', output: 'janhavi.bhattad@outlook.com' }
+  ]
+});
+</script>
+<script>
+AccordionGallery.mount(document.getElementById('dashboard-gallery'), {
+  items: [
+    {
+      kicker: 'Tableau Public',
+      title: 'Global BMW Sales Analysis (2010–2024)',
+      subtitle: 'Sales, transmission, fuel type, and regional trends across 11 BMW models.',
+      image: 'dashboards/Screenshot%202026-08-29%20at%202.29.12%E2%80%AFPM.png',
+      alt: 'Global BMW Sales Analysis dashboard',
+      link: 'https://public.tableau.com/app/profile/janhavi.bhattad/viz/GlobalBMWSalesAnalysis20102024/Dashboard1'
+    },
+    {
+      kicker: 'Tableau Public',
+      title: 'Netflix Churn Analysis',
+      subtitle: 'Churn trends, subscription plans, and behavior segments across 9,900+ users.',
+      image: 'dashboards/Screenshot%202026-08-29%20at%202.29.42%E2%80%AFPM.png',
+      alt: 'Netflix Churn Analysis dashboard',
+      link: 'https://public.tableau.com/app/profile/janhavi.bhattad/viz/Netflix-CustomerChurnEngagementAnalysisDashboard/Dashboard1'
+    },
+    {
+      kicker: 'Tableau Public',
+      title: 'Credit Surveillance & Risk AI',
+      subtitle: 'Demographic risk matrix and default-probability scoring across a $5.02B portfolio.',
+      image: 'dashboards/Screenshot%202026-08-29%20at%202.36.06%E2%80%AFPM.png',
+      alt: 'Credit Surveillance and Risk AI dashboard',
+      link: 'https://public.tableau.com/app/profile/janhavi.bhattad/viz/CreditDefault_17713011920110/CreditSurveillance'
+    },
+    {
+      kicker: 'Tableau Public',
+      title: 'The Model Intelligence Suite',
+      subtitle: 'Feature importance, model accuracy matrix, and what-if threshold policy simulation.',
+      image: 'dashboards/Screenshot%202026-08-29%20at%202.36.25%E2%80%AFPM.png',
+      alt: 'The Model Intelligence Suite dashboard',
+      link: 'https://public.tableau.com/app/profile/janhavi.bhattad/viz/CreditDefault_17713011920110/CreditSurveillance'
+    },
+    {
+      kicker: 'Tableau Public',
+      title: 'Debt & Payment Surveillance',
+      subtitle: '6-month payment delay trends and credit capacity by education.',
+      image: 'dashboards/Screenshot%202026-08-29%20at%202.36.36%E2%80%AFPM.png',
+      alt: 'Debt and Payment Surveillance dashboard',
+      link: 'https://public.tableau.com/app/profile/janhavi.bhattad/viz/CreditDefault_17713011920110/CreditSurveillance'
+    }
   ]
 });
 </script>
@@ -415,36 +493,37 @@ PortfolioTerminal.mount(document.getElementById('hero-terminal'), {
     },
     {
       slot: 'folder-slot-4',
-      name: 'Coming Soon',
-      initial: '?',
-      kicker: 'In Progress',
-      summary: 'A new project is currently in the works. Check back soon for details.',
-      tools: [],
-      code: null,
-      color: muted,
-      colorDark: mutedDark
+      name: 'Sentri',
+      initial: 'S',
+      kicker: 'Fraud & Risk Detection',
+      summary: 'UPI payment-scam detector and Razorpay chargeback-defense platform combining 7 rule-based fraud signals (English, Hinglish, and Devanagari Hindi) with all-MiniLM-L6-v2 sentence-embedding similarity across a 3,022-row labeled corpus (1,490 scam, 1,532 legit) to score payment-request risk before approval. Combined pipeline hits 98.7% precision, 77.5% recall, and 0.984 ROC-AUC on a leakage-safe 605-row held-out split, backed by 35 automated tests and 3 live Razorpay API integrations (Payment Links, Disputes, HMAC-SHA256-verified webhooks); deployed via FastAPI, React, and Docker-ready Python.',
+      tools: ['Python', 'FastAPI', 'React', 'sentence-transformers', 'scikit-learn', 'Pydantic', 'Razorpay API'],
+      code: 'https://github.com/Janhwhy/sentri',
+      color: berry,
+      colorDark: berryDark
     },
     {
       slot: 'folder-slot-5',
-      name: 'Coming Soon',
-      initial: '?',
-      kicker: 'In Progress',
-      summary: 'A new project is currently in the works. Check back soon for details.',
-      tools: [],
-      code: null,
-      color: muted,
-      colorDark: mutedDark
+      name: 'MoneyPal',
+      initial: 'M',
+      kicker: 'Expense Tracker',
+      summary: 'A one-tap expense tracker built for my younger sister as she left for college for the first time, to help her track her money. FastAPI + async SQLAlchemy backend with 6 routers, 18 REST endpoints, and 4 models; Google OAuth sign-in auto-provisions 10 categories and a ₹10,000 default budget. IST-aware analytics (day/week/month/year) break down spending by category and trend. React 19 + TypeScript frontend (~2,200 LOC), installable as a PWA, with Recharts and TanStack Query.',
+      tools: ['Python', 'FastAPI', 'SQLAlchemy', 'PostgreSQL', 'JWT', 'Google OAuth', 'Cron Jobs', 'React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Recharts', 'Docker'],
+      code: 'https://github.com/Janhwhy/moneypal',
+      live: 'https://moneypalbudget.vercel.app/',
+      color: berry,
+      colorDark: berryDark
     },
     {
       slot: 'folder-slot-6',
-      name: 'Coming Soon',
-      initial: '?',
-      kicker: 'In Progress',
-      summary: 'A new project is currently in the works. Check back soon for details.',
-      tools: [],
-      code: null,
-      color: muted,
-      colorDark: mutedDark
+      name: 'QuantForge',
+      initial: 'Q',
+      kicker: 'Quant Backtesting',
+      summary: 'Quantitative backtesting platform that lets traders validate strategies against real historical data before risking capital, computing Sharpe, Sortino, CAGR, max drawdown, and VaR through an event-driven (Market to Signal to Order to Fill) simulation engine with realistic slippage and commissions. In live testing it correctly flagged a naive SMA crossover on AAPL (2023) as a losing setup (-22.8% return, -1.19 Sharpe) against +54.8% and 2.32 Sharpe for buy-and-hold, and in a 2022 TSLA drawdown cut peak-to-trough loss nearly in half (-47.6% vs -73.0%). Every run auto-generates a full risk report and equity curve via a typed FastAPI backend and Next.js dashboard, backed by a 150-test suite with a 100% pass rate.',
+      tools: ['Python', 'FastAPI', 'PostgreSQL', 'Redis', 'SQLAlchemy', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Docker', 'pytest'],
+      code: 'https://github.com/Janhwhy/QuantForge',
+      color: berry,
+      colorDark: berryDark
     }
   ];
 

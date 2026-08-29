@@ -80,6 +80,15 @@
 
     const actionsEl = dialog.querySelector('.mac-dialog-actions');
     actionsEl.innerHTML = '';
+    if (project.live) {
+      const a = document.createElement('a');
+      a.className = 'btn btn-primary';
+      a.href = project.live;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = 'Live →';
+      actionsEl.appendChild(a);
+    }
     if (project.code) {
       const a = document.createElement('a');
       a.className = 'btn btn-ghost';
