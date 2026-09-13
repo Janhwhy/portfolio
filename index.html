@@ -483,9 +483,10 @@ AccordionGallery.mount(document.getElementById('dashboard-gallery'), {
       name: 'Pitwall',
       initial: 'P',
       kicker: 'Multi-Agent RAG',
-      summary: 'Multi-agent RAG system with 6 specialized agents and an orchestrator using ChromaDB and Groq LLM APIs to answer race-analytics queries over 30K+ records. Backed by a 15-endpoint FastAPI service with SQLite and Python ETL pipelines to ingest, process, and serve structured race data.',
-      tools: ['Python', 'FastAPI', 'SQLite', 'ChromaDB', 'Groq'],
+      summary: 'Full-stack F1 race-strategy assistant using RAG over real race telemetry, enabling natural-language analysis of pit calls, tyre choices, and weather impact. Indexes ~30.6K lap, 4.3K weather, and 1K+ pit-stop records across 4 Snowflake Cortex Search services, using server-side embeddings to reduce memory usage. 6-agent orchestration (tyre, weather, radio, rivals, circuit, data) is coordinated by an LLM router that selects 1-3 specialists concurrently; exact numeric queries bypass the LLM via direct SQL, with Groq synthesizing results.',
+      tools: ['Python', 'FastAPI', 'Snowflake Cortex Search', 'Groq'],
       code: 'https://github.com/Janhwhy/PitWall-RAG',
+      live: 'https://pit-wall-formula1.vercel.app/',
       image: 'carousel/PITWALL.jpeg',
       color: berry,
       colorDark: berryDark
