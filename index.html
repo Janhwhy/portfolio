@@ -7,7 +7,6 @@
 <meta name="description" content="Janhavi Bhattad, B.Tech Computer Science (AI) student building drift-aware ML systems and RAG agents. Open to AI/ML and Data internships.">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="assets/blur-text.css">
-<link rel="stylesheet" href="assets/pill-nav.css">
 <link rel="stylesheet" href="assets/folder.css">
 <link rel="stylesheet" href="assets/mac-dialog.css">
 <link rel="stylesheet" href="assets/terminal.css">
@@ -48,6 +47,17 @@ body{margin:0}
 .pf-meta-label{font:600 11px var(--font-heading);text-transform:uppercase;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 55%, transparent)}
 .pf-skill-row{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--color-divider)}
 .pf-skill-row:last-child{border-bottom:none}
+.nav{position:sticky;top:0;z-index:10;display:flex;justify-content:center;padding:18px 20px;background:color-mix(in srgb,var(--color-bg) 82%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.nav-bar{display:flex;align-items:center;gap:clamp(20px,4vw,56px)}
+.nav-link{font:400 16px/1 var(--font-body);color:var(--color-text);text-decoration:none;padding:6px 0;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s}
+.nav-link:hover,.nav-link.is-active{color:var(--color-accent);border-bottom-color:var(--color-accent)}
+.nav-more{position:relative}
+.nav-star{background:none;border:none;padding:4px;cursor:pointer;color:var(--color-text);display:flex;transition:transform .35s,color .2s}
+.nav-star svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linejoin:round}
+.nav-star:hover,.nav-star[aria-expanded="true"]{color:var(--color-accent);transform:rotate(-14deg)}
+.nav-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translate(-50%,-6px);display:flex;flex-direction:column;gap:14px;padding:18px 26px;background:var(--color-bg);border:1px solid var(--color-divider);border-radius:16px;box-shadow:0 16px 40px -16px rgba(110,27,51,.3);opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s}
+.nav-more.open .nav-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.nav-menu .nav-link{align-self:flex-start}
 .pf-folders-grid{display:flex;gap:36px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:28px 4px 8px}
 .pf-folders-grid::-webkit-scrollbar{display:none}
 .pf-folders-grid .folder-item{flex:0 0 clamp(150px,22%,220px);scroll-snap-align:start}
@@ -81,11 +91,9 @@ body{margin:0}
   .tl-item{font-size:13px}
   .tl-sep{font-size:10px;margin:0 10px}
   .nav{padding:12px 14px}
-  .pill-nav{width:100%}
-  .pill-nav-items{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  .pill-nav-items::-webkit-scrollbar{display:none}
-  .pill-list{flex-wrap:nowrap;padding:8px 16px}
-  .pill,.pill-nav-sm .pill{height:30px;padding:0 13px;font-size:11px;flex:none}
+  .nav-bar{gap:16px}
+  .nav-link{font-size:14px}
+  .nav-star svg{width:24px;height:24px}
   .pf-section{padding:48px 20px}
   .pf-hero-section{padding-top:20px;padding-bottom:40px}
   .pf-hero-title{font-size:38px}
@@ -101,23 +109,26 @@ body{margin:0}
 <body>
 <div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);min-height:100vh">
 
-  <div class="nav" style="position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:center;padding:16px 20px">
-    <nav class="pill-nav pill-nav-sm" aria-label="Primary" style="--base:var(--color-accent);--hover-text:var(--color-bg);--pill-text:var(--color-text);--bar-bg:var(--color-surface);--bar-border:var(--color-accent-200)">
-      <div class="pill-nav-items">
-        <ul class="pill-list" role="menubar">
-          <li role="none"><a role="menuitem" class="pill" data-section="about" href="#about"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">About</span><span class="pill-label-hover" aria-hidden="true">About</span></span></a></li>
-          <li role="none"><a role="menuitem" class="pill" data-section="skills" href="#skills"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Skills</span><span class="pill-label-hover" aria-hidden="true">Skills</span></span></a></li>
-          <li role="none"><a role="menuitem" class="pill" data-section="projects" href="#projects"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Projects</span><span class="pill-label-hover" aria-hidden="true">Projects</span></span></a></li>
-          <li role="none"><a role="menuitem" class="pill" data-section="dashboard" href="#dashboard"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Dashboards</span><span class="pill-label-hover" aria-hidden="true">Dashboards</span></span></a></li>
-          <li role="none"><a role="menuitem" class="pill" data-section="research" href="#research"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Research</span><span class="pill-label-hover" aria-hidden="true">Research</span></span></a></li>
-          <li role="none"><a role="menuitem" class="pill" data-section="certificates" href="#certificates"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Certificates</span><span class="pill-label-hover" aria-hidden="true">Certificates</span></span></a></li>
-          <li role="none"><a role="menuitem" class="pill" data-section="experience" href="#experience"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Experience</span><span class="pill-label-hover" aria-hidden="true">Experience</span></span></a></li>
-          <li role="none"><a role="menuitem" class="pill" data-section="education" href="#education"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Education</span><span class="pill-label-hover" aria-hidden="true">Education</span></span></a></li>
-          <li role="none"><a role="menuitem" class="pill" data-section="achievements" href="#achievements"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Achievements</span><span class="pill-label-hover" aria-hidden="true">Achievements</span></span></a></li>
-          <li role="none"><a role="menuitem" class="pill" data-section="contact" href="#contact"><span class="hover-circle" aria-hidden="true"></span><span class="label-stack"><span class="pill-label">Contact</span><span class="pill-label-hover" aria-hidden="true">Contact</span></span></a></li>
-          <li role="none"><a role="menuitem" class="pill pill-cta" href="assets/JanhaviBhattad.pdf" target="_blank" rel="noopener"><span class="label-stack"><span class="pill-label">Resume</span></span></a></li>
-        </ul>
+  <div class="nav">
+    <nav class="nav-bar" aria-label="Primary">
+      <a class="nav-link" data-section="about" href="#about">about</a>
+      <a class="nav-link" data-section="skills" href="#skills">skills</a>
+      <a class="nav-link" data-section="projects" href="#projects">projects</a>
+      <div class="nav-more">
+        <button class="nav-star" id="nav-star" aria-label="More sections" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5Q12 2 21 6.5L12 21.5z"/><path d="M4.6 9.6Q12 6.6 19.4 9.6"/><circle cx="10" cy="12.4" r="1.2"/><circle cx="14" cy="13.6" r="1"/><circle cx="12" cy="17" r=".8"/></svg>
+        </button>
+        <div class="nav-menu" id="nav-menu" role="menu">
+          <a class="nav-link" data-section="dashboard" role="menuitem" href="#dashboard">dashboards</a>
+          <a class="nav-link" data-section="research" role="menuitem" href="#research">research</a>
+          <a class="nav-link" data-section="certificates" role="menuitem" href="#certificates">certificates</a>
+          <a class="nav-link" data-section="experience" role="menuitem" href="#experience">experience</a>
+          <a class="nav-link" data-section="education" role="menuitem" href="#education">education</a>
+          <a class="nav-link" data-section="achievements" role="menuitem" href="#achievements">achievements</a>
+        </div>
       </div>
+      <a class="nav-link" href="assets/JanhaviBhattad.pdf" target="_blank" rel="noopener">resume</a>
+      <a class="nav-link" data-section="contact" href="#contact">contact</a>
     </nav>
   </div>
 
@@ -138,7 +149,7 @@ body{margin:0}
           <a class="btn btn-secondary" href="#contact">Get in Touch</a>
         </div>
         <div style="display:flex;gap:12px;margin-top:20px">
-          <a class="pf-social-btn" href="mailto:janhavi.bhattad@outlook.com" aria-label="Email" title="Email">
+          <a class="pf-social-btn" href="mailto:janhavi.n.bhattad@gmail.com" aria-label="Email" title="Email">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </a>
           <a class="pf-social-btn" href="https://linkedin.com/in/JanhaviBhattad" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
@@ -374,7 +385,7 @@ body{margin:0}
       <div class="pf-label pf-label-lg" style="color:var(--color-accent-300)">Contact</div>
       <h2 style="font-size:44px;max-width:900px;color:var(--color-bg)">Open to AI/ML and Data internships.<br>Let's talk.</h2>
       <div class="pf-contact-links" style="display:flex;gap:32px;margin-top:32px;flex-wrap:wrap">
-        <a href="mailto:janhavi.bhattad@outlook.com" style="word-break:break-word">janhavi.bhattad@outlook.com</a>
+        <a href="mailto:janhavi.n.bhattad@gmail.com" style="word-break:break-word">janhavi.n.bhattad@gmail.com</a>
         <a href="https://linkedin.com/in/JanhaviBhattad" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a href="https://github.com/Janhwhy" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
@@ -389,7 +400,6 @@ body{margin:0}
 
 </div>
 <script src="assets/blur-text.js"></script>
-<script src="assets/pill-nav.js"></script>
 <script src="assets/folder.js"></script>
 <script src="assets/mac-dialog.js"></script>
 <script src="assets/terminal.js"></script>
@@ -418,7 +428,7 @@ PortfolioTerminal.mount(document.getElementById('hero-terminal'), {
     { command: 'cat education.txt', output: 'B.Tech CS (AI), Manipal Institute of Technology · 2027' },
     { command: 'cat status.txt', output: 'Open to AI/ML and Data internships' },
     { command: 'ls skills/', output: 'python pytorch fastapi docker langgraph databricks' },
-    { command: 'cat contact.txt', output: 'janhavi.bhattad@outlook.com' }
+    { command: 'cat contact.txt', output: 'janhavi.n.bhattad@gmail.com' }
   ]
 });
 </script>
@@ -618,6 +628,28 @@ AccordionGallery.mount(document.getElementById('dashboard-gallery'), {
   track.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
   update();
+})();
+</script>
+<script>
+(function () {
+  var more = document.querySelector('.nav-more');
+  var star = document.getElementById('nav-star');
+  function setOpen(o) { more.classList.toggle('open', o); star.setAttribute('aria-expanded', o); }
+  star.addEventListener('click', function (e) { e.stopPropagation(); setOpen(!more.classList.contains('open')); });
+  document.addEventListener('click', function () { setOpen(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+
+  var links = document.querySelectorAll('.nav-link[data-section]');
+  var byId = {};
+  links.forEach(function (l) { byId[l.dataset.section] = l; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      links.forEach(function (l) { l.classList.remove('is-active'); });
+      byId[en.target.id].classList.add('is-active');
+    });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  Object.keys(byId).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
 })();
 </script>
 <script>
