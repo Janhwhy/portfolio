@@ -48,7 +48,14 @@ body{margin:0}
 .pf-meta-label{font:600 11px var(--font-heading);text-transform:uppercase;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 55%, transparent)}
 .pf-skill-row{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--color-divider)}
 .pf-skill-row:last-child{border-bottom:none}
-.pf-folders-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:36px;justify-items:center;padding-top:16px}
+.pf-folders-grid{display:flex;gap:36px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:28px 4px 8px}
+.pf-folders-grid::-webkit-scrollbar{display:none}
+.pf-folders-grid .folder-item{flex:0 0 clamp(150px,22%,220px);scroll-snap-align:start}
+.pf-slider-nav{display:flex;gap:10px;justify-content:center;margin-top:20px}
+.pf-slider-btn{width:40px;height:40px;border-radius:50%;border:none;background:transparent;color:#A62C4E;display:inline-flex;align-items:center;justify-content:center;padding:0;cursor:pointer;transition:border-color .2s,background .2s,opacity .2s}
+.pf-slider-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pf-slider-btn:hover:not(:disabled){background:rgba(166,44,78,.08)}
+.pf-slider-btn:disabled{opacity:.35;cursor:default}
 .pf-cert-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--color-divider)}
 .pf-cert-head{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;padding:16px 0;border-bottom:2px solid var(--color-divider);font:600 11px var(--font-heading);text-transform:uppercase;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 55%, transparent)}
 .pf-timeline-row{display:grid;grid-template-columns:180px 1fr;gap:24px}
@@ -222,12 +229,18 @@ body{margin:0}
     <div class="pf-label pf-label-lg">Projects</div>
     <p class="text-muted" style="margin:-12px 0 20px;font-size:13px">Click a folder to open →</p>
     <div class="pf-grid pf-folders-grid">
+      <div class="folder-item"><div id="folder-slot-7"></div><div class="folder-label">ClaimPilot</div></div>
+      <div class="folder-item"><div id="folder-slot-8"></div><div class="folder-label">AskQL</div></div>
       <div class="folder-item"><div id="folder-slot-1"></div><div class="folder-label">The Drifting Oracle</div></div>
       <div class="folder-item"><div id="folder-slot-6"></div><div class="folder-label">QuantForge</div></div>
       <div class="folder-item"><div id="folder-slot-2"></div><div class="folder-label">Pitwall</div></div>
       <div class="folder-item"><div id="folder-slot-3"></div><div class="folder-label">ShockProof</div></div>
       <div class="folder-item"><div id="folder-slot-4"></div><div class="folder-label">Sentri</div></div>
       <div class="folder-item"><div id="folder-slot-5"></div><div class="folder-label">MoneyPal</div></div>
+    </div>
+    <div class="pf-slider-nav">
+      <button class="pf-slider-btn" id="folders-prev" aria-label="Previous projects"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="pf-slider-btn" id="folders-next" aria-label="Next projects"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
   </section>
 
@@ -467,6 +480,28 @@ AccordionGallery.mount(document.getElementById('dashboard-gallery'), {
 
   var PROJECTS = [
     {
+      slot: 'folder-slot-7',
+      name: 'ClaimPilot',
+      initial: 'C',
+      kicker: 'Multi-Agent Claims Automation',
+      summary: 'Built for the AgentOps 2026 Hackathon (MIT Bengaluru x CGI): a LangGraph orchestrator coordinating 12 agents across a 15-state claim lifecycle, from admission to settlement; caught 47/47 planted errors on 55 held-out test cases and cut insurer queries from 5 to 0. Keeps AI out of money decisions: a deterministic rules engine computes every amount and cites its policy clause, a human approves every submission, and the LLM only drafts text. Adds XGBoost denial-risk models (0.986 ROC-AUC) with SHAP explanations and a cited ChromaDB RAG assistant. Benchmarked against baselines with a 4-agent simulated insurer, where evidence-backed appeals recovered Rs 20,690 the baselines missed; shipped as FastAPI + React with live agent traces, one-command Docker setup, and 227 tests.',
+      tools: ['Python', 'LangGraph', 'FastAPI', 'XGBoost', 'ChromaDB', 'Ollama', 'React', 'Docker'],
+      code: 'https://github.com/Janhwhy/claim-pilot',
+      color: berry,
+      colorDark: berryDark
+    },
+    {
+      slot: 'folder-slot-8',
+      name: 'AskQL',
+      initial: 'A',
+      kicker: 'Agentic Business Analytics',
+      summary: 'Agentic business-analytics chatbot that converts plain-English questions into SQL, validates execution with sqlglot, self-corrects failures, selects charts, and generates natural-language insights; a self-correction retry loop improved end-to-end success from 70% to 100% (13/13). A deterministic DuckDB simulation engine generates 20 months of evolving company data (24 products, ~37K sales, 780+ customers, 63K+ support tickets) in under 4 minutes, with scheduled daily updates. Next.js/TypeScript frontend with real-time SSE streaming and dynamic Recharts visualizations, Gemini + local Ollama failover, idle-timeout handling, and 39 automated tests. Includes a Power BI-style dashboard layer where users pin, arrange, and resize chart answers; tiles re-query DuckDB on load with SQLite metadata persistence and sqlglot validation.',
+      tools: ['Python', 'LangGraph', 'FastAPI', 'DuckDB', 'Next.js', 'TypeScript', 'Gemini API', 'Ollama'],
+      code: 'https://github.com/Janhwhy/AskQL',
+      color: berry,
+      colorDark: berryDark
+    },
+    {
       slot: 'folder-slot-1',
       name: 'The Drifting Oracle',
       initial: 'D',
@@ -563,6 +598,23 @@ AccordionGallery.mount(document.getElementById('dashboard-gallery'), {
       }
     });
   });
+})();
+</script>
+<script>
+(function () {
+  var track = document.querySelector('.pf-folders-grid');
+  var prev = document.getElementById('folders-prev');
+  var next = document.getElementById('folders-next');
+  function step() { return track.querySelector('.folder-item').offsetWidth + 36; }
+  function update() {
+    prev.disabled = track.scrollLeft <= 1;
+    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+  }
+  prev.addEventListener('click', function () { track.scrollBy({ left: -step() * 2, behavior: 'smooth' }); });
+  next.addEventListener('click', function () { track.scrollBy({ left: step() * 2, behavior: 'smooth' }); });
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 })();
 </script>
 <script>
