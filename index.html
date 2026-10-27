@@ -66,8 +66,23 @@ body{margin:0}
 .pf-slider-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .pf-slider-btn:hover:not(:disabled){background:rgba(166,44,78,.08)}
 .pf-slider-btn:disabled{opacity:.35;cursor:default}
-.pf-cert-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--color-divider)}
-.pf-cert-head{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;padding:16px 0;border-bottom:2px solid var(--color-divider);font:600 11px var(--font-heading);text-transform:uppercase;letter-spacing:0.06em;color:color-mix(in srgb, var(--color-text) 55%, transparent)}
+.pf-duo{display:grid;grid-template-columns:1.15fr 1fr;gap:72px;align-items:start}
+.pf-duo-label{font:500 14px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--color-accent-700);margin-bottom:14px}
+.pf-cert-list{}
+.pf-cert-item{display:grid;grid-template-columns:96px 1fr;align-items:center;gap:0 20px;padding:13px 0;color:inherit;text-decoration:none}
+.pf-cert-issuer{font:700 16px/1.1 var(--font-heading);letter-spacing:-.01em}
+.pf-cert-issuer small{display:block;margin-top:3px;font:400 10.5px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:0;color:color-mix(in srgb,var(--color-text) 55%,transparent)}
+.pf-cert-name{display:block;font:600 14.5px/1.3 var(--font-heading)}
+.pf-cert-link{display:block;margin-top:3px;font-size:12.5px;color:var(--color-accent-700);transition:transform .25s}
+.pf-cert-item:hover .pf-cert-link{transform:translateX(4px)}
+.pf-paper{border:1px solid var(--color-divider);border-radius:24px;padding:28px 32px}
+.pf-paper-meta{font:400 13px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--color-accent-700)}
+.pf-paper-title{font:600 clamp(20px,2vw,24px)/1.25 var(--font-heading);margin:14px 0 8px}
+.pf-paper-journal{font-size:14px;color:color-mix(in srgb,var(--color-text) 55%,transparent)}
+.pf-paper p{margin:16px 0 0;font-size:14.5px;line-height:1.65;color:color-mix(in srgb,var(--color-text) 78%,transparent)}
+.pf-paper-links{display:flex;gap:24px;flex-wrap:wrap;margin-top:22px}
+.pf-paper-links a{font-size:14px;color:var(--color-accent-700);text-decoration:none;transition:transform .2s}
+.pf-paper-links a:hover{text-decoration:underline;text-underline-offset:4px}
 .pf-timeline-row{display:grid;grid-template-columns:180px 1fr;gap:24px}
 .pf-timeline-date{color:color-mix(in srgb, var(--color-text) 55%, transparent);font:600 13px var(--font-heading)}
 .pf-contact-links a{color:var(--color-bg);font:600 15px var(--font-heading)}
@@ -100,7 +115,9 @@ body{margin:0}
   .pf-about-grid,.pf-hero-grid,.pf-skill-row,.pf-timeline-row{grid-template-columns:1fr}
   .pf-about-photo{justify-self:center;margin-top:0}
   #hero-terminal{margin-top:24px !important}
-  .pf-cert-row,.pf-cert-head{grid-template-columns:1.5fr 1fr 1fr;font-size:13px}
+  .pf-duo{grid-template-columns:1fr;gap:48px}
+  .pf-cert-item{grid-template-columns:72px 1fr;gap:0 14px}
+  .pf-cert-issuer{font-size:14px}
   .pf-contact-links{flex-direction:column;gap:16px !important}
   .pf-contact-links a{font-size:clamp(13px,4.5vw,15px)}
 }
@@ -261,49 +278,28 @@ body{margin:0}
     <div id="dashboard-gallery"></div>
   </section>
 
-  <section class="pf-section" id="research">
-    <div class="pf-label pf-label-lg">Research</div>
-    <div class="pf-grid" style="gap:24px">
-      <div>
-          <h4>The Influence of AI on Algorithmic Trading and Its Impact on Predicting Financial Market Trends</h4>
-          <div class="pf-meta-label" style="margin-top:6px">IJSET, Vol. 13, Issue 2 · 2025</div>
-          <p style="margin-top:8px"><strong>Topic:</strong> Examines how AI, especially deep learning and reinforcement learning, is transforming algorithmic trading and financial market prediction, covering trade execution speed, fraud detection, and risk management.</p>
-          <p style="margin-top:8px"><strong>Methodology:</strong> Mixed-methods study using time series analysis, regression models, and three predictive ML algorithms (neural networks, support vector machines, and decision trees) applied to historical stock prices, trading volumes, and macroeconomic data (interest rates, inflation, GDP growth).</p>
-          <p style="margin-top:8px"><strong>Predictive accuracy:</strong> Neural network models performed best, reaching an average R-squared of 0.85, outperforming traditional statistical models.</p>
-          <p style="margin-top:8px"><strong>Trading performance:</strong> AI-based strategies beat traditional benchmarks (buy-and-hold, moving average), delivering higher Sharpe ratios and better risk-adjusted returns.</p>
-          <p style="margin-top:8px"><strong>Findings &amp; limitations:</strong> AI improves fraud detection, credit risk assessment, and regulatory compliance, but is limited by reliance on historical data and training-data quality and bias. The paper calls for stronger regulatory frameworks around AI autonomy in trading.</p>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
-            <a class="btn btn-primary" href="certificates/Janhavi%20Bhattad%20certificate.png" target="_blank" rel="noopener">Certificate →</a>
-            <a class="btn btn-primary" href="https://www.researchgate.net/publication/391209008_The_Influence_of_Artificial_Intelligence_on_Algorithmic_Trading_and_Its_Impact_on_Predicting_Financial_Market_Trends" target="_blank" rel="noopener">Read Here →</a>
-          </div>
+  <section class="pf-section">
+    <div class="pf-label pf-label-lg">Research &amp; Certificates</div>
+    <div class="pf-duo" style="margin-top:32px">
+      <div id="certificates">
+        <div class="pf-duo-label">certificates</div>
+        <div class="pf-cert-list">
+        <a class="pf-cert-item" href="certificates/hadoop.pdf" target="_blank" rel="noopener"><div class="pf-cert-issuer">IBM<small>certificate</small></div><div><span class="pf-cert-name">Hadoop Foundations – Level 1</span><span class="pf-cert-link">view certificate →</span></div></a>
+        <a class="pf-cert-item" href="certificates/ML%20for%20DS.pdf" target="_blank" rel="noopener"><div class="pf-cert-issuer">IBM<small>certificate</small></div><div><span class="pf-cert-name">Machine Learning for Data Science Projects</span><span class="pf-cert-link">view certificate →</span></div></a>
+        <a class="pf-cert-item" href="certificates/Spark.pdf" target="_blank" rel="noopener"><div class="pf-cert-issuer">IBM<small>certificate</small></div><div><span class="pf-cert-name">Spark – Level 1</span><span class="pf-cert-link">view certificate →</span></div></a>
+        <a class="pf-cert-item" href="certificates/big%20data.pdf" target="_blank" rel="noopener"><div class="pf-cert-issuer">IBM<small>certificate</small></div><div><span class="pf-cert-name">Big Data Foundations – Level 1</span><span class="pf-cert-link">view certificate →</span></div></a>
+        <a class="pf-cert-item" href="certificates/cert-ml%20using%20r.pdf" target="_blank" rel="noopener"><div class="pf-cert-issuer">Infosys<small>certificate</small></div><div><span class="pf-cert-name">Explore Machine Learning using R</span><span class="pf-cert-link">view certificate →</span></div></a>
+        <a class="pf-cert-item" href="certificates/CV%20cert.pdf" target="_blank" rel="noopener"><div class="pf-cert-issuer">IBM<small>certificate</small></div><div><span class="pf-cert-name">Introduction to Computer Vision and Image Processing</span><span class="pf-cert-link">view certificate →</span></div></a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="pf-section" id="certificates">
-    <div class="pf-label pf-label-lg">Certificates</div>
-    <div class="pf-grid" style="gap:0">
-      <div class="pf-cert-head">
-        <div>Certificate</div><div>Issuer</div><div>View</div>
-      </div>
-      <div class="pf-cert-row">
-        <div>Hadoop Foundations – Level 1</div><div>IBM</div><div><a class="btn btn-ghost" href="certificates/hadoop.pdf" target="_blank" rel="noopener">View →</a></div>
-      </div>
-      <div class="pf-cert-row">
-        <div>Machine Learning for Data Science Projects</div><div>IBM</div><div><a class="btn btn-ghost" href="certificates/ML%20for%20DS.pdf" target="_blank" rel="noopener">View →</a></div>
-      </div>
-      <div class="pf-cert-row">
-        <div>Spark – Level 1</div><div>IBM</div><div><a class="btn btn-ghost" href="certificates/Spark.pdf" target="_blank" rel="noopener">View →</a></div>
-      </div>
-      <div class="pf-cert-row">
-        <div>Big Data Foundations – Level 1</div><div>IBM</div><div><a class="btn btn-ghost" href="certificates/big%20data.pdf" target="_blank" rel="noopener">View →</a></div>
-      </div>
-      <div class="pf-cert-row">
-        <div>Explore Machine Learning using R</div><div>Infosys Springboard</div><div><a class="btn btn-ghost" href="certificates/cert-ml%20using%20r.pdf" target="_blank" rel="noopener">View →</a></div>
-      </div>
-      <div class="pf-cert-row" style="border-bottom:none">
-        <div>Introduction to Computer Vision and Image Processing</div><div>IBM</div><div><a class="btn btn-ghost" href="certificates/CV%20cert.pdf" target="_blank" rel="noopener">View →</a></div>
+      <div id="research">
+        <div class="pf-duo-label">research</div>
+        <div class="pf-paper">
+          <div class="pf-paper-meta">ijset · vol. 13, issue 2 · 2025</div>
+          <h4 class="pf-paper-title">The Influence of AI on Algorithmic Trading and Its Impact on Predicting Financial Market Trends</h4>
+          <p>Neural networks performed best with an average R² of 0.85, and AI-driven strategies beat traditional benchmarks on risk-adjusted returns.</p>
+          <div class="pf-paper-links"><a href="https://www.researchgate.net/publication/391209008_The_Influence_of_Artificial_Intelligence_on_Algorithmic_Trading_and_Its_Impact_on_Predicting_Financial_Market_Trends" target="_blank" rel="noopener">read paper ↗</a><a href="certificates/Janhavi%20Bhattad%20certificate.png" target="_blank" rel="noopener">certificate ↗</a></div>
+        </div>
       </div>
     </div>
   </section>
